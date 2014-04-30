@@ -16,7 +16,6 @@ function to_array(string){
     return string.replace(/,/g,'').split(' ');
 }
 
-// common(array1, array2);
 function common(array1, array2){
     common = 0;
     for (var a=0; a<array1.length; a++){
@@ -29,15 +28,8 @@ function common(array1, array2){
     return common
 }
 
-// return the recipe that is most in common with the passed array
-function common_best(array, recipes){
-    // object that contains arrays ["ingredients"] and ["directions"]
-    current = {};
-    for (var recipe in recipes){
-        ingr = recipe["ingredients"];
-        if(common(ingr, array) > common(current["ingredients"],array){
-            current = recipe;
-        }
-    }
-    return 
+function(ingrs1, ingrs2){
+    if(common(ingrs1, input_list) < common(ingrs2, input_list))
+        return -1;
+    ja
 }
