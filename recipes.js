@@ -1,12 +1,7 @@
-recipes = {
-    "scrambled eggs": {
-        "ingredients": [
-            "eggs",
-            "milk",
-            "butter",
-            "salt",
-            "white pepper"
-        ],
+recipes = [
+    {
+        "name": "scrambled eggs",
+        "ingredients": ["eggs","milk","butter","salt","white pepper"],
         "directions": [
             "1. Crack the eggs into a glass mixing bowl and beat them until they turn a pale yellow color.",
             "2. Heat a heavy-bottomed nonstick sauté pan over medium-low heat.",
@@ -24,16 +19,9 @@ recipes = {
             "   Eggs are delicate, so they'll continue to cook for a few moments after they're on the plate."
         ]
     },
-    "pancakes": {
-        "ingredients": [
-            "eggs",
-            "butter",
-            "salt",
-            "milk",
-            "flour",
-            "baking powder",
-            "sugar"
-        ], 
+    {
+        "name":"pancakes",
+        "ingredients": ["eggs","butter","salt","milk","flour","baking powder","sugar"], 
         "directions": [
             "1. In a large bowl, sift together the flour, baking powder, salt and sugar.",
             "   Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.",
@@ -42,14 +30,9 @@ recipes = {
             "   Brown on both sides and serve hot."
         ]
     },
-    "cat" : {
-    	
-    	"ingredients": [
-    		"marmalade",
-    		"parsley",
-    		"butter",
-    		"ginger cat"
-    	],
+    {
+        "name":"cat",
+    	"ingredients": ["marmalade","parsley","butter","ginger"],
     	"directions" : [
     		"1. In a large bowl, mix the marmalde, parsley, and butter together.",
     		"2. Blend in the cat using a grinder.",
@@ -57,18 +40,9 @@ recipes = {
     	
     	]
     },
-    "beef curry": {
-    	"ingredients" : [
-    		"coconut milk",
-    		"red curry paste",
-    		"chicken broth",
-    		"fish sauce",
-    		"brown sugar",
-    		"red bell pepper",
-    		"asparagus",
-    		"sirloin steak",
-    		"rice noodles"
-    	],
+    {
+        "name": "beef curry",
+    	"ingredients" : ["coconut milk","red curry paste","chicken broth","fish sauce","brown sugar","red bell pepper","asparagus","sirloin steak","rice noodles"],
     	"directions" : [
     		"1. In a large wok or skillet, heat 1/2 cup coconut milk over medium-high, stirring, until shiny and thick, 2 minutes.",
     		"2. Add curry paste and cook, stirring, until fragrant, 1 minute.",
@@ -77,18 +51,9 @@ recipes = {
     		"5. Add steak and cook, stirring, until just cooked through, 2 minutes. Serve over noodles with lime wedges and cilantro."
     	]  
     },
-    "asparagus and lemon risotto ":{
-    	"ingredients" : [
-    		"vegetable broth",
-    		"olive oil",
-    		"onion",
-    		"rice",
-    		"white wine",
-    		"asparagus",
-    		"peas",
-    		"lemon juice",
-    		"parsley"
-        ]
+    {
+        "name":"asparagus and lemon risotto ",
+    	"ingredients" : ["vegetable broth","olive oil","onion","rice","white wine","asparagus","peas","lemon juice","parsley"]
     } 
-}
+]
 
