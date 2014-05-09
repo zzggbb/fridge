@@ -1,35 +1,43 @@
 function get_input(){
-    var input = document.getElementById('ingredients'),
-        ingredients_string = input.value;
-    if (ingredients_string){
-        return to_array(ingredients_string);
+    var ingredients = document.getElementById('ingredients');
+    if (ingredients){
+    return to_array(ingredients.value);
+    
+}
+
+/*  format the given string into an array
+    these example strings will result in ['a','b','c','x','y']
+        "a b c x y" 
+        " a,b,c,x,y"
+        "a, b, c, x, y"
+        " a,  b  c x,y  "
+    this function normalizes a wide range of given input, allowing the 
+    user to enter their ingredients without concern of their format. 
+*/
+function format(string){
+    return string.toLowerCase().trim().replace(/,/g," ").replace(/ +/g," ").split(" ");
+}
+
+/*
+    number of common elements between two arrays
+*/
+function common(a, b){
+    return a.filter(function(n){ return b.indexOf(n) != -1 }).length;
+}
+
+/*
+
+*/
+function compare(a,b){
+    return common(x,b["ingredients"])-common(x,a["ingredients"]);
+}
+
+function main(){
+    var input_text = document.getElementById("ingredients");
+    if(input_text){
+        // something was typed
+        var 
     } else {
-        error_div = document.getElementById('error');
-        error_div.style.visibility = 'visible';
-        setTimeout(function() {
-            error_div.style.visibility = 'hidden';
-        }, 3000);
+        // nothing was typed
     }
-}
-
-function to_array(string){
-    return string.replace(/,/g,'').split(' ');
-}
-
-function common(array1, array2){
-    common = 0;
-    for (var a=0; a<array1.length; a++){
-        for (var b=0; b<array2.length; b++){
-            if (array1[a] === array2[b]){
-                common++;     
-            } 
-        } 
-    }
-    return common
-}
-
-function(ingrs1, ingrs2){
-    if(common(ingrs1, input_list) < common(ingrs2, input_list))
-        return -1;
-    ja
 }
