@@ -3,9 +3,9 @@
                 nothing has been typed. For use in the main function.
 */
 function get_input(){
-    var ingredients = document.getElementById('ingredients');
+    var ingredients = document.getElementById('input_ingredients').value;
     if (ingredients){
-        return to_array(ingredients.value);
+        return normalize(ingredients);
     } else {
         return false;
     }
@@ -33,19 +33,23 @@ function normalize(string){
                 Therefore, 2 common elements.
 */
 function common(a, b){
-    return a.filter(function(n){ return b.indexOf(n) != -1 }).length;
+    return a.filter(function(n){ 
+        return b.indexOf(n) != -1;
+    }).length;
 }
 
 function add_recipe(recipe){
-    var recipe_outer     = document.getElementById('recipe_container');
-    
+    var recipe_outer     = document.getElementById('recipe_outer');
+
+    var recipe_wrap      = document.createElement('div');    
     var name             = document.createElement('div');
     var ingredients      = document.createElement('div');
-    var directions_outer = document.createElement('div');
+    var recipe_directions = document.createElement('div');
     
+    recipe_wrap.id      = 'recipe_wrap';
     name.id             = 'recipe_name';
     ingredients.id      = 'recipe_ingredients';
-    directions_outer.id = 'recipe_directions';
+    recipe_directions.id = 'recipe_directions';
     
     name.innerHTML = recipe['name'];
     ingredients.innerHTML = recipe['ingredients'].join(", ");
@@ -54,24 +58,25 @@ function add_recipe(recipe){
         var direction_line = document.createElement('div');
         direction_line.id = 'direction_line';
         direction_line.innerHTML = element;
-        directions_outer.appendChild(direction_line);
+        recipe_directions.appendChild(direction_line);
     });
     
-    recipe_outer.appendChild(name);
-    recipe_outer.appendChild(ingredients);
-    recipe_outer.appendChild(directions_outer);
+    recipe_wrap.appendChild(name);
+    recipe_wrap.appendChild(ingredients);
+    recipe_wrap.appendChild(recipe_directions);
+    recipe_outer.appendChild(recipe_wrap);
+}
+function test_append(){
+    var input = get_input();
+    if (input) {
+    }
 }
 
 function main(){
-    var input = document.getElementById('input_ingredients');
-    if (ingredients){
-        return normalize(ingredients);
-    } else {
-        return false;
-    }
+    var input = get_input();
     if(input){
         var recipes_c = recipes;
-        var sorted_recipes = recipes_c.sort(function(a,b){
+        recipes_c.sort(function(a,b){
         /*
             return a comparison value (-,0,+) based on the commonalities between
             ingredients `a` with `recipes` and ingredients `b` with `recipes`.
@@ -82,13 +87,10 @@ function main(){
             elements of the recipes.
         */
             return common(input,b["ingredients"])-common(input,a["ingredients"]);
-        } 
-        /*
-            display contents of the first few indexes of `sorted_recipes`, these are the best recipes
-        */
-        sorted_recipes.slice(0,3).forEach(function(element, index, array){
-            add_recipe(element);    
         });
+        for (var recipe in recipes_c.slice(0,3)){
+            add_recipe(recipe);
+        }
     } else {
         document.getElementById('errormsg').style.display="inline";
     }

@@ -1,0 +1,29 @@
+#input_outer{
+    width:50%;
+    display:inline-block;
+    background-color:#00aedb;
+    margin:0px;
+}
+#recipe_outer{
+    width:50%;
+    display:inline-block;
+    background-color:#c95338;
+    margin:0px;
+}
+#submit_button{
+    margin:0px;
+    height:50px;
+    width:23%;
+    display:inline-block;
+    background-color:#227722;
+    border: 2px solid #fff;
+}
+#input_ingredients {
+    margin:0px;
+    height:50px;
+    width:75%;
+}
+
+#recipe_wrap{
+    border: 4px solid #F0E68C;
+}
