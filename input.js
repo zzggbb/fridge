@@ -10,18 +10,21 @@ function get_input(){
         return false;
     }
 }
+function format(array){
+    return array.join(", ");
+}
 
 /*  
     purpose:    This function normalizes a wide range of given input, allowing 
                 the user to enter ingredients without concern of the format. 
-    procedure:  Format the given string into an array.
+    procedure:  Normalize the given string into an array.
     example:    These example strings will result in ['a','b','c','x','y']
                     "a b c x y" 
                     " a,b,c,x,y"
                     "a, b, c, x, y"
                     " a,  b  c x,y  "
 */
-function format(string){
+function normalize(string){
     return string
         .toLowerCase()
         .trim()
@@ -39,6 +42,30 @@ function format(string){
 */
 function common(a, b){
     return a.filter(function(n){ return b.indexOf(n) != -1 }).length;
+}
+
+function add_recipe(recipe){
+    var recipe_outer     = document.getElementById('recipe_container');
+    
+    var name             = document.createElement('div');
+    var ingredients      = document.createElement('div');
+    var directions_outer = document.createElement('div');
+    
+    name.id             = 'recipe_name';
+    ingredients.id      = 'recipe_ingredients';
+    directions_outer.id ='recipe_directions';
+    
+    name.innerHTML = recipe['name'];
+    ingredients.innerHTML = format(recipe['ingredients']);
+    recipe['directions'].forEach(function(element, index, array){
+        var direction_line = document.createElement('div');
+        direction_line.id = 'direction_line';
+        direction_line.innerHTML = element;
+        directions_outer.appendChild(direction_line);
+    });
+    recipe_outer.appendChild(name);
+    recipe_outer.appendChild(ingredients);
+    recipe_outer.appendChild(directions_outer);
 }
 
 function main(){
@@ -61,6 +88,9 @@ function main(){
             display contents of the first few indexes of `sorted_recipes`, these
             are the best recipes
         */
+        recipes_c.slice(0,3).forEach(function(element, index, array){
+            add_recipe(element);    
+        });
     } else {
         // nothing was typed
         document.getElementById('errormsg').style.display="inline";
