@@ -10,9 +10,6 @@ function get_input(){
         return false;
     }
 }
-function format(array){
-    return array.join(", ");
-}
 
 /*  
     purpose:    This function normalizes a wide range of given input, allowing 
@@ -25,11 +22,7 @@ function format(array){
                     " a,  b  c x,y  "
 */
 function normalize(string){
-    return string
-        .toLowerCase()
-        .trim()
-        .replace(/,/g," ").replace(/ +/g," ")
-        .split(" ");
+    return string.toLowerCase().trim().replace(/, +/g,",").split(",");
 }
 
 /*
@@ -38,7 +31,6 @@ function normalize(string){
                 and then returns the length of that filtered list.
     example:    common([1,2,3],[2,3,4]) -> [2,3].length -> 2
                 Therefore, 2 common elements.
-                
 */
 function common(a, b){
     return a.filter(function(n){ return b.indexOf(n) != -1 }).length;
@@ -53,23 +45,30 @@ function add_recipe(recipe){
     
     name.id             = 'recipe_name';
     ingredients.id      = 'recipe_ingredients';
-    directions_outer.id ='recipe_directions';
+    directions_outer.id = 'recipe_directions';
     
     name.innerHTML = recipe['name'];
-    ingredients.innerHTML = format(recipe['ingredients']);
+    ingredients.innerHTML = recipe['ingredients'].join(", ");
+    
     recipe['directions'].forEach(function(element, index, array){
         var direction_line = document.createElement('div');
         direction_line.id = 'direction_line';
         direction_line.innerHTML = element;
         directions_outer.appendChild(direction_line);
     });
+    
     recipe_outer.appendChild(name);
     recipe_outer.appendChild(ingredients);
     recipe_outer.appendChild(directions_outer);
 }
 
 function main(){
-    var input = get_input();
+    var input = document.getElementById('input_ingredients');
+    if (ingredients){
+        return normalize(ingredients);
+    } else {
+        return false;
+    }
     if(input){
         var recipes_c = recipes;
         var sorted_recipes = recipes_c.sort(function(a,b){
@@ -85,14 +84,12 @@ function main(){
             return common(input,b["ingredients"])-common(input,a["ingredients"]);
         } 
         /*
-            display contents of the first few indexes of `sorted_recipes`, these
-            are the best recipes
+            display contents of the first few indexes of `sorted_recipes`, these are the best recipes
         */
-        recipes_c.slice(0,3).forEach(function(element, index, array){
+        sorted_recipes.slice(0,3).forEach(function(element, index, array){
             add_recipe(element);    
         });
     } else {
-        // nothing was typed
         document.getElementById('errormsg').style.display="inline";
     }
 }
