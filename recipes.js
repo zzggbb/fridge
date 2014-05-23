@@ -85,5 +85,10 @@ recipes = [
     		"8. Fry potatoes over high heat in the remaining "
     	]
     }
+    {
+    	"name":			"Cream Cheese and Tomato Omelette",
+    	"ingredients":	[''],
+    	"directions":['']
+    }
 ]
 
