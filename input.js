@@ -16,13 +16,11 @@ function get_input(){
                 the user to enter ingredients without concern of the format. 
     procedure:  Normalize the given string into an array.
     example:    These example strings will result in ['a','b','c','x','y']
-                    "a b c x y" 
                     " a,b,c,x,y"
                     "a, b, c, x, y"
-                    " a,  b  c x,y  "
 */
 function normalize(string){
-    return string.toLowerCase().trim().replace(/, +/g,",").split(",");
+    return string.toLowerCase().trim().replace(/ *, */g,",").split(",");
 }
 
 /*
@@ -37,46 +35,61 @@ function common(a, b){
         return b.indexOf(n) != -1;
     }).length;
 }
+function clear_elements(element_names){
+    element_names.map(function(x){
+        var element = document.getElementById(x);
+        if (element == null){return;}
+        while (element.firstChild){
+            element.removeChild(element.firstChild);
+        }
+    });
+}
+
+function add_error(type) {
+    var error = document.createElement('div');
+    var error_map = {
+        'bad_match': "No matches found for the provided ingredients, we're working on it!",
+        'bad_input': "Please type a list of comma separated ingredients",
+    }
+    error.id=type;
+    error.innerHTML=error_map[type];
+    document.getElementById('errors').appendChild(error);
+    
+}
 
 function add_recipe(recipe){
-    var recipe_outer     = document.getElementById('recipe_outer');
-
-    var recipe_wrap      = document.createElement('div');    
-    var name             = document.createElement('div');
-    var ingredients      = document.createElement('div');
+    var recipe_wrap       = document.createElement('div');    
+    var name              = document.createElement('div');
+    var ingredients       = document.createElement('div');
     var recipe_directions = document.createElement('div');
     
-    recipe_wrap.id      = 'recipe_wrap';
-    name.id             = 'recipe_name';
-    ingredients.id      = 'recipe_ingredients';
+    recipe_wrap.id       = 'recipe_wrap';
+    name.id              = 'recipe_name';
+    ingredients.id       = 'recipe_ingredients';
     recipe_directions.id = 'recipe_directions';
     
     name.innerHTML = recipe['name'];
     ingredients.innerHTML = recipe['ingredients'].join(", ");
     
-    recipe['directions'].forEach(function(element, index, array){
+    recipe['directions'].map(function(item){
         var direction_line = document.createElement('div');
         direction_line.id = 'direction_line';
-        direction_line.innerHTML = element;
-        recipe_directions.appendChild(direction_line);
+        direction_line.innerHTML = item;
+        recipe_directions.appendChild(direction_line);       
     });
     
-    recipe_wrap.appendChild(name);
-    recipe_wrap.appendChild(ingredients);
-    recipe_wrap.appendChild(recipe_directions);
-    recipe_outer.appendChild(recipe_wrap);
-}
-function test_append(){
-    var input = get_input();
-    if (input) {
-    }
+    [name,ingredients,recipe_directions].map(function(item){
+        recipe_wrap.appendChild(item);
+    });
+
+    document.getElementById('recipe_outer').appendChild(recipe_wrap);
 }
 
 function main(){
     var input = get_input();
     if(input){
-        var recipes_c = recipes;
-        recipes_c.sort(function(a,b){
+        clear_elements(['errors','recipe_outer']);
+        recipes.sort(function(a,b){
         /*
             return a comparison value (-,0,+) based on the commonalities between
             ingredients `a` with `recipes` and ingredients `b` with `recipes`.
@@ -88,10 +101,15 @@ function main(){
         */
             return common(input,b["ingredients"])-common(input,a["ingredients"]);
         });
-        for (var recipe in recipes_c.slice(0,3)){
-            add_recipe(recipe);
+        if ( common(input,recipes[0]['ingredients']) == 0 ){
+            // not even the best matched
+            add_error('bad_match');
+        } else {
+            recipes.slice(0,3).filter(function(n){
+                return common(input,n['ingredients']) > 0
+            }).map(add_recipe); 
         }
     } else {
-        document.getElementById('errormsg').style.display="inline";
+        add_error('bad_input');
     }
 }

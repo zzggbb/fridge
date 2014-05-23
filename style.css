@@ -1,29 +1,85 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font: 12px/14px sans-serif;
+
+}
 #input_outer{
     width:50%;
     display:inline-block;
-    background-color:#00aedb;
+    background-color:#66aabb;
     margin:0px;
+    float:left;
 }
 #recipe_outer{
     width:50%;
     display:inline-block;
-    background-color:#c95338;
+    background-color:#272c30;
     margin:0px;
-}
-#submit_button{
-    margin:0px;
-    height:50px;
-    width:23%;
-    display:inline-block;
-    background-color:#227722;
-    border: 2px solid #fff;
+    float:right;
+    color:#FFF;
 }
 #input_ingredients {
     margin:0px;
     height:50px;
-    width:75%;
+    width:100%;
 }
 
 #recipe_wrap{
-    border: 4px solid #F0E68C;
+    margin:10px;
+    padding:10px;
+    background-color:#66aabb;
+}
+#recipe_name{
+    border-bottom: 5px solid #272c30;
+    padding:5px 0px 5px 0px;
+}
+#recipe_ingredients{
+    border-bottom: 5px solid #272c30;
+    padding:5px 0px 5px 0px;
+}
+#recipe_directions{
+    padding:5px 0px 5px 0px; 
+
+}
+
+#bad_input, #bad_match{
+    margin:0px 10px 10px 10px;
+    background-color:#b7416e;
+    color:#FFF;
+    padding:5px;
+    text-align:center;
+}
+input {
+    text-align:center;
+    margin:0px;
+    padding:0px;
+    top:0px;
+    background-color:#272c30;
+    color:#FFF;
+    border:0px;
+}
+button{
+    background-color:#b7416e;
+    border:0px;
+    padding:5px;
+    margin:10px 0px 10px 10px;
+    height:50px;
+    width:75px;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    color:#FFF;
+    display:inline-block;
+}
+a:link,a:visited,a:active,a:hover {
+    color:#FFF;
+    text-decoration: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
