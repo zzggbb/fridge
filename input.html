@@ -1,23 +1,19 @@
 <html>
     <head>
-        <link 
-            href='http://fonts.googleapis.com/css?family=Roboto' 
-            rel='stylesheet' 
-            type='text/css'>
-        <link 
-            href='style.css'
-            rel='stylesheet'
-            type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href='style.css' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="recipes.js"></script>
         <script type="text/javascript" src="input.js"></script>
     </head>
     <body>
         <div id="input_outer"> 
             <input id="input_ingredients" type="text"/>
-            <button id='submit_button' onclick="main()"/>Submit Ingredients</button>
-            <button id='clear_ingredients' onclick="input_ingredients.value='';"/>Clear Ingredients</button>
-            <button id='clear_recipes' onclick="clear_elements(['recipe_outer'])"/>Clear Recipes</button>
-            <button id='clear_errors' onclick="clear_elements(['errors'])"/>Clear Errors</button>
+            <div id='buttons'>
+                <button id='submit_button' onclick="main()"/>Submit Ingredients</button>
+                <button id='clear_ingredients' onclick="input_ingredients.value='';"/>Clear Ingredients</button>
+                <button id='clear_recipes' onclick="clear_elements(['recipe_outer'])"/>Clear Recipes</button>
+                <button id='clear_errors' onclick="clear_elements(['errors'])"/>Clear Errors</button>
+            </div>
             <div id='errors'></div>
         </div>
         <div id="recipe_outer"></div>
