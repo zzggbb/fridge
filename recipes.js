@@ -84,7 +84,7 @@ recipes = [
     		"7. Cover and simmer gently for about an hour or until meat is tender",
     		"8. Fry potatoes over high heat in the remaining "
     	]
-    }
+    },
     {
     	"name":			"Cream Cheese and Tomato Omelette",
     	"ingredients":	[''],
