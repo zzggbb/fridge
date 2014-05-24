@@ -4,26 +4,32 @@
 
 }
 #input_outer{
-    width:50%;
+    width:100%;
     display:inline-block;
     background-color:#66aabb;
-    margin:0px;
-    float:left;
 }
 #recipe_outer{
-    width:50%;
+    width:100%;
     display:inline-block;
     background-color:#272c30;
     margin:0px;
     float:right;
     color:#FFF;
 }
+.center {
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+}
+
 #input_ingredients {
     margin:0px;
     height:50px;
     width:100%;
 }
-
+#buttons{
+    width: 437px;    
+}
 #recipe_wrap{
     margin:10px;
     padding:10px;
