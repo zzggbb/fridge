@@ -39,8 +39,8 @@ function common(a, b){
              argument, remove each of its children until there are none left.
 */
 function clear_elements(parents){
-    parents.map(function(x){
-        var child = document.getElementById(x);
+    parents.map(function(n){
+        var child = document.getElementById(n);
         if (child == null){return;}
         while (child.firstChild){
             child.removeChild(child.firstChild);
@@ -79,11 +79,11 @@ function add_recipe(recipe){
     elems['name'].innerHTML = recipe['name'];
     elems['ingredients'].innerHTML = recipe['ingredients'].join(", ");
     recipe['directions'].map(function(item){
-        var direction_line = document.createElement('div');
-        direction_line.id = 'direction_line';
-        var direction_num = recipe['directions'].indexOf(item) + 1
-        direction_line.innerHTML = direction_num + ". " + item;
-        elems['directions'].appendChild(direction_line);       
+        var line = document.createElement('div');
+        line.id = 'line';
+        var num = recipe['directions'].indexOf(item) + 1
+        line.innerHTML = num + ". " + item;
+        elems['directions'].appendChild(line);       
     });
     Object.keys(elems).slice(1).map(function(item){
         elems['wrap'].appendChild(elems[item]);

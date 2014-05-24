@@ -1,4 +1,4 @@
-http://github.io/hifiboombox/fridge
+http://hifiboombox.github.io/fridge
 
 ##APCS Final Project
 * Zane Bradley
