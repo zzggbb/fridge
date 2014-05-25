@@ -55,6 +55,9 @@ function clear_elements(parents){
 function random_between(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+/*
+    display a random recipe
+*/
 function test_recipe(){
     clear_elements(['recipe_outer','errors']);
     add_recipe(recipes[random_between(0,recipes.length-1)]);
