@@ -6,6 +6,9 @@
        local('Roboto-Regular'), 
        url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -45,8 +48,8 @@
 }
 
 #recipe_wrap{
-    margin:10px;
-    padding:10px;
+    margin:5px;
+    padding:5px;
     background-color:#66aabb;
 }
 

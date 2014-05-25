@@ -48,6 +48,18 @@ function clear_elements(parents){
     });
 }
 /*
+    purpose: generate random integer numbers
+    explain: return a random integer number between min (inclusive) and max 
+             (exclusive).
+*/
+function random_between(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+function test_recipe(){
+    clear_elements(['recipe_outer','errors']);
+    add_recipe(recipes[random_between(0,recipes.length-1)]);
+}
+/*
     purpose: append an error the the `errors` element
     explain: match the passed `type` argument to an error message in the 
              `error_map` object, and append the message to the `errors` div.
