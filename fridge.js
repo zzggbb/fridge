@@ -88,14 +88,15 @@ function add_recipe(recipe){
         elem.id = 'recipe_' + item;
         elems[item] = elem;
     });
+    elems['directions'].appendChild(document.createElement('ol'));
     elems['name'].innerHTML = recipe['name'];
     elems['ingredients'].innerHTML = recipe['ingredients'].join(", ");
     recipe['directions'].map(function(item){
-        var line = document.createElement('div');
-        line.id = 'line';
-        var num = recipe['directions'].indexOf(item) + 1
-        line.innerHTML = num + ". " + item;
-        elems['directions'].appendChild(line);       
+        var line = document.createElement('li');
+        /*line.id = 'line';*/
+        /*var num = recipe['directions'].indexOf(item) + 1*/
+        line.innerHTML = item;
+        elems['directions'].firstChild.appendChild(line);       
     });
     Object.keys(elems).slice(1).map(function(item){
         elems['wrap'].appendChild(elems[item]);

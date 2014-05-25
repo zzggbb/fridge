@@ -6,9 +6,7 @@
        local('Roboto-Regular'), 
        url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
 }
-::-webkit-scrollbar { 
-    display: none; 
-}
+
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -22,7 +20,7 @@
 #recipe_outer{
     width:100%;
     display:inline-block;
-    background-color:#272c30;
+    background-color:#66aabb;
     margin:0px;
     float:right;
     color:#FFF;
@@ -48,16 +46,13 @@
 }
 
 #recipe_wrap{
-    margin:5px;
     padding:5px;
-    background-color:#66aabb;
+    background-color:#272c30;
 }
 
 #recipe_name,#recipe_ingredients,#recipe_directions {
     padding: 5 0 5 0px;
-}
-#recipe_name,#recipe_ingredients {
-    border-bottom:5px solid #272c30;
+    border-bottom:5px solid #66aabb;
 }
 
 #bad_input, #bad_match{
@@ -86,11 +81,27 @@ button{
     width:75px;
     color:#FFF;
 }
+
+ol {
+    margin:0px;
+    padding:0 0 0 25px;
+}
+/*
+    page beautification
+*/
+
+/* make all links uniform */
 a:link,a:visited,a:active,a:hover {
     color:#FFF;
     text-decoration: none;
 }
 
+/* remove scrollbars */
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* remove changes in appearance on focus */
 input:focus,
 select:focus,
 textarea:focus,
