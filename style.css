@@ -30,10 +30,7 @@
     height:50px;
     width:100%;
 }
-#buttons, #errors{
-    width:100%;
-    height:auto;
-    padding:10 0 0 0px;
+#buttons, #errors, #content{
     display:flex;
     -webkit-box-direction:normal;
     -webkit-box-orient: horizontal;
@@ -42,6 +39,9 @@
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;   
+}
+#buttons {
+    padding:5 0 0 0px;
 }
 
 #recipe_wrap{
@@ -59,7 +59,7 @@
 
 #bad_input, #bad_match{
     width:auto;
-    margin:0px 10px 10px 10px;
+    margin:0 5 5 5px;
     background-color:#b7416e;
     color:#FFF;
     padding:5px;
@@ -78,7 +78,7 @@ button{
     background-color:#b7416e;
     border:0px;
     padding:5px;
-    margin:0 5px;
+    margin:0 2.5 5 2.5px;
     height:50px;
     width:75px;
     color:#FFF;

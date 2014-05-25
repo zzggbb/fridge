@@ -8,17 +8,19 @@
         <script src="fridge.js" type="text/javascript"></script>
     </head>
     <body>
-        <div id="input_outer">
-            <input id="input_ingredients" type="text"/>
-            <div id='buttons'>
-                <button id='submit_button' onclick="main()"/>Submit Ingredients</button>
-                <button id='clear_ingredients' onclick="input_ingredients.value=''"/>Clear Ingredients</button>
-                <button id='clear_recipes' onclick="clear_elements(['recipe_outer'])"/>Clear Recipes</button>
-                <button id='clear_errors' onclick="clear_elements(['errors'])"/>Clear Errors</button>
-                <button id='extra_button' onclick=""/>Extra Button!</button>
+        <div id='content'>
+            <div id="input_outer">
+                <input id="input_ingredients" type="text"/>
+                <div id='buttons'>
+                    <button id='submit_button' onclick="main()"/>Submit Ingredients</button>
+                    <button id='clear_ingredients' onclick="input_ingredients.value=''"/>Clear Ingredients</button>
+                    <button id='clear_recipes' onclick="clear_elements(['recipe_outer'])"/>Clear Recipes</button>
+                    <button id='clear_errors' onclick="clear_elements(['errors'])"/>Clear Errors</button>
+                    <button id='extra_button' onclick=""/>Extra Button!</button>
+                </div>
+                <div id='errors'></div>
             </div>
-            <div id='errors'></div>
+            <div id="recipe_outer"></div>
         </div>
-        <div id="recipe_outer"></div>
     </body>
 </html>
