@@ -14,7 +14,6 @@
 }
 #input_outer{
     width:100%;
-    display:inline-block;
     background-color:#66aabb;
 }
 #recipe_outer{
@@ -25,39 +24,41 @@
     float:right;
     color:#FFF;
 }
-.center {
-    margin-left:auto;
-    margin-right:auto;
-    width:100%;
-}
 
 #input_ingredients {
     margin:0px;
     height:50px;
     width:100%;
 }
-#buttons{
-    width: 437px;    
+#buttons, #errors{
+    width:100%;
+    height:auto;
+    padding:10 0 0 0px;
+    display:flex;
+    -webkit-box-direction:normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;   
 }
+
 #recipe_wrap{
     margin:10px;
     padding:10px;
     background-color:#66aabb;
 }
-#recipe_name{
-    border-bottom: 5px solid #272c30;
-    padding:5px 0px 5px 0px;
-}
-#recipe_ingredients{
-    border-bottom: 5px solid #272c30;
-    padding:5px 0px 5px 0px;
-}
-#recipe_directions{
-    padding:5px 0px 5px 0px; 
 
+#recipe_name,#recipe_ingredients,#recipe_directions {
+    padding: 5 0 5 0px;
+}
+#recipe_name,#recipe_ingredients {
+    border-bottom:5px solid #272c30;
 }
 
 #bad_input, #bad_match{
+    width:auto;
     margin:0px 10px 10px 10px;
     background-color:#b7416e;
     color:#FFF;
@@ -77,15 +78,10 @@ button{
     background-color:#b7416e;
     border:0px;
     padding:5px;
-    margin:10px 0px 10px 10px;
+    margin:0 5px;
     height:50px;
     width:75px;
-    top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px;
     color:#FFF;
-    display:inline-block;
 }
 a:link,a:visited,a:active,a:hover {
     color:#FFF;
