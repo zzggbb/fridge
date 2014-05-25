@@ -49,10 +49,9 @@
     padding:5px;
     background-color:#272c30;
 }
-
 #recipe_name,#recipe_ingredients,#recipe_directions {
-    padding: 5 0 5 0px;
     border-bottom:5px solid #66aabb;
+    padding:5 0 5 25px;
 }
 
 #bad_input, #bad_match{
@@ -81,10 +80,13 @@ button{
     width:75px;
     color:#FFF;
 }
+button:hover {
+    background-color:#913457;
+}
 
 ol {
     margin:0px;
-    padding:0 0 0 25px;
+    padding:0px;
 }
 /*
     page beautification
