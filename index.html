@@ -10,14 +10,15 @@
     <body>
         <div id='content'>
             <div id="input_outer">
-                <input id="input_ingredients" type="text"/>
+                <input id="input_ingredients" 
+                    placeholder="Type a comma separated list of ingredients" type="text"/>
                 <div id='buttons'>
                     <button onclick="main()"/>Submit Ingredients</button>
                     <button onclick="input_ingredients.value=''"/>Clear Ingredients</button>
                     <button onclick="clear_elements(['recipe_outer'])"/>Clear Recipes</button>
                     <button onclick="clear_elements(['errors'])"/>Clear Errors</button>
-                    <button onclick="test_recipe()"/>Test Recipe</button>
-                    <button onclick="recipes.map(add_recipe)"/>All Recipes</button>
+                    <button onclick="test_recipe()"/>Random Recipe</button>
+                    <button onclick="recipes.map(add_recipe)"/>View All Recipes</button>
                 </div>
                 <div id='errors'></div>
             </div>

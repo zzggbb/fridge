@@ -73,7 +73,7 @@ function add_error(type) {
         'bad_match': "No matches found, check your spelling, or maybe we need more recipes...",
         'bad_input': "Please type a list of comma separated ingredients",
     }
-    error.id=type;
+    error.id='error';
     error.innerHTML=error_map[type];
     document.getElementById('errors').appendChild(error);
 }

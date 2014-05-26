@@ -13,6 +13,11 @@
     font: 18px/24px sans-serif;
 
 }
+#input_outer, #recipe_outer, #recipe_wrap, #recipe_name,#recipe_ingredients,
+#recipe_directions, #error, input, button {
+    border-radius:5px
+}
+
 #input_outer{
     width:100%;
     background-color:#66aabb;
@@ -56,7 +61,7 @@
     background-color:#b7416e;
 }
 
-#bad_input, #bad_match{
+#error {
     width:auto;
     margin:0 5 5 5px;
     background-color:#b7416e;
@@ -72,6 +77,7 @@ input {
     background-color:#272c30;
     color:#FFF;
     border:0px;
+    border-radius:5px 5px 5px 5px;
 }
 button{
     background-color:#b7416e;
@@ -91,7 +97,7 @@ ol {
     padding:0px;
 }
 /*
-    page beautification
+    page beautification all the way down...
 */
 
 /* make all links uniform */
@@ -112,3 +118,27 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+/* 
+    don't group, invalid individuals invalidate
+    the entire group
+*/
+::-webkit-input-placeholder { color: #aaa;}
+:-moz-placeholder { color: #aaa; }
+::-moz-placeholder { color: #aaa; }
+:-ms-input-placeholder { color: #aaa; }
+
+/*
+    make placeholder disappear on focus
+*/
+
+/* WebKit browsers */
+input:focus::-webkit-input-placeholder { color:transparent; }
+
+/* Mozilla Firefox 4 to 18 */
+input:focus:-moz-placeholder { color:transparent; }
+
+/* Mozilla Firefox 19+ */
+input:focus::-moz-placeholder { color:transparent; }
+
+/* Internet Explorer 10+ */
+input:focus:-ms-input-placeholder { color:transparent; }
