@@ -1,20 +1,10 @@
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Roboto Regular'), 
-       local('Roboto-Regular'), 
-       url(http://themes.googleusercontent.com/static/fonts/roboto/v11/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');
-}
-
-
 * {
     font-family: 'Roboto', sans-serif;
     font: 18px/24px sans-serif;
 
 }
-#input_outer, #recipe_outer, #recipe_wrap, #recipe_name,#recipe_ingredients,
-#recipe_directions, #error, input, button {
+#input_outer, #recipe_outer, #recipe_wrap, #recipe_name,
+#recipe_ingredients, #recipe_directions, #error, input, button {
     border-radius:5px
 }
 
