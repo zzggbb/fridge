@@ -20,8 +20,8 @@
 #recipe_outer{
     width:100%;
     display:inline-block;
-    background-color:#272c30;
-    margin:0 0 0 0px;
+    background-color:#66aabb;
+    margin:0px;
     float:right;
     color:#FFF;
 }
@@ -47,13 +47,13 @@
 
 #recipe_wrap{
     padding:5 5 1 5px;
-    margin:5px;
-    background-color:#b7416e;
+    margin:0 0 5 0px;
+    background-color:#272c30;
 }
 #recipe_name,#recipe_ingredients,#recipe_directions {
     padding:5 0 5 36px;
     margin:0 0 5 0px;
-    background-color:#272c30;
+    background-color:#b7416e;
 }
 
 #bad_input, #bad_match{
