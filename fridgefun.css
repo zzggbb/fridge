@@ -1,0 +1,144 @@
+#fridge {
+    width: 50%;
+}
+/*this is the top door*/
+#door {
+    width:100%; 
+    height:60%;
+    display: inline-block;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  background: -webkit-linear-gradient(top, #2F2727, #456C99);
+    
+    
+}
+/*the bottom part of the frigerator*/
+#base{
+    width: 100%;
+    height:35%;
+    background-color:#456C99;
+    display: inline-block;
+    
+    outline: none;
+
+}
+ /*the middle bar of the refigerator*/
+#vert-chrome {
+    background: radial-gradient(ellipse,#FFF,#888); 
+    width:7px; 
+    height: 100%;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-box;
+    
+}
+/*bar between the top and middle*/
+#horz-chrome {
+  width:100%; 
+  background: radial-gradient(ellipse,#FFF,#888); 
+  height:7px;
+  background-color: #c11;
+  display: inline-block;
+
+}
+
+/*the text on the bottom base*/
+input[type='text'] {
+    padding-top: 10px;
+    width:100%; height:100%;
+    overflow: visible;
+    background-color: #456C99;
+      font-size: 30px;
+        text-align: center;
+    outline: none;
+  
+}
+/*to be installed later*/
+#handle-lever{
+    width: 20px;
+    height: 20px;
+    background-color: radial-gradient(ellipse,#FFF,#888);
+    position: absolute;
+    display: inline-block;
+    margin-left: 20%;
+    margin-top: 40%;
+    color: #000000;
+    
+}
+/*text to be installed in the left door*/
+#handle-base{
+    width: 20px;
+    height: 20px;
+    color: #000;
+    position: absolute;
+}
+#wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+#first {
+    padding-left: 9px;
+    padding-top: 10px;
+    width: 45%;
+    color: #FFF;
+    font-size: 100%;
+    font-family: Roboto;
+    float:left; /* add this */
+    text-align: center;
+}
+#second {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 10px;
+    color: #FFF;
+    font-family: Roboto;
+    overflow: hidden;
+    float: right;
+    width: 45%;
+    text-align: center;
+}
+.buttonclass{   
+
+    text-align: center;
+    
+}
+button{
+    background-color: #7a7965;
+    border:0px;
+    padding:5px;
+    margin:0 2.5 5 2.5px;
+    height:40px;
+    width:75px;
+    color:#FFF;
+      border-radius: 10px;
+      font-size: 10px;
+    box-shadow: 2px 2px 1px #a26a6a;
+    margin-top: 4px;
+}
+#stub1{
+width: 5%;
+height: 5%;
+float: left;
+margin-left: 10px;
+color: #000;
+
+    }
+    
+#stub2{
+width: 5%;
+height: 5%;
+float: left;
+margin-left: 40px;
+color: #000;
+}
+#buttons{
+    display:flex;
+    -webkit-box-direction:normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;   
+}
