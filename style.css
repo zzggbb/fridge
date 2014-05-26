@@ -20,13 +20,12 @@
     float:right;
     color:#FFF;
 }
-
 #input_ingredients {
     margin:0px;
     height:50px;
     width:100%;
 }
-#buttons, #errors, #content{
+#buttons, #errors {
     display:flex;
     -webkit-box-direction:normal;
     -webkit-box-orient: horizontal;
@@ -39,7 +38,6 @@
 #buttons {
     padding:5 0 0 0px;
 }
-
 #recipe_wrap{
     padding:5 5 1 5px;
     margin:0 0 5 0px;
@@ -50,7 +48,6 @@
     margin:0 0 5 0px;
     background-color:#b7416e;
 }
-
 #error {
     width:auto;
     margin:0 5 5 5px;
@@ -86,9 +83,7 @@ ol {
     margin:0px;
     padding:0px;
 }
-/*
-    page beautification all the way down...
-*/
+/* page beautification all the way down... */
 
 /* make all links uniform */
 a:link,a:visited,a:active,a:hover {
@@ -102,33 +97,17 @@ a:link,a:visited,a:active,a:hover {
 }
 
 /* remove changes in appearance on focus */
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
+input:focus,select:focus,textarea:focus,button:focus {
     outline: none;
 }
-/* 
-    don't group, invalid individuals invalidate
-    the entire group
-*/
+/* don't group these, invalid individuals invalidate the entire group */
 ::-webkit-input-placeholder { color: #aaa;}
 :-moz-placeholder { color: #aaa; }
 ::-moz-placeholder { color: #aaa; }
 :-ms-input-placeholder { color: #aaa; }
 
-/*
-    make placeholder disappear on focus
-*/
-
-/* WebKit browsers */
+/* make placeholder disappear on focus */
 input:focus::-webkit-input-placeholder { color:transparent; }
-
-/* Mozilla Firefox 4 to 18 */
 input:focus:-moz-placeholder { color:transparent; }
-
-/* Mozilla Firefox 19+ */
 input:focus::-moz-placeholder { color:transparent; }
-
-/* Internet Explorer 10+ */
 input:focus:-ms-input-placeholder { color:transparent; }
