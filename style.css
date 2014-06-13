@@ -73,7 +73,7 @@ button{
     height:75px;
     width:100px;
     color:#FFF;
-    box-shadow:3px 3px #272c30;
+    box-shadow:2px 2px #272c30;
 }
 button:hover {
     box-shadow:none;
