@@ -10,6 +10,7 @@
 #input_outer{
     width:100%;
     background-color:#66aabb;
+    padding-bottom:3px;
 }
 #recipe_outer{
     width:100%;
@@ -35,7 +36,7 @@
     align-items: center;   
 }
 #buttons {
-    padding:5 0 0 0px;
+    padding:8 0 5 0px;
 }
 #recipe_wrap{
     padding:5 5 1 5px;
@@ -49,11 +50,12 @@
 }
 #error {
     width:auto;
-    margin:0 5 5 5px;
+    margin:3 0 10 0px;
     background-color:#b7416e;
     color:#FFF;
     padding:5px;
     text-align:center;
+    box-shadow:0px 3px #272c30;
 }
 input {
     text-align:center;
@@ -73,10 +75,12 @@ button{
     height:75px;
     width:100px;
     color:#FFF;
-    box-shadow:2px 2px #272c30;
+    box-shadow:0px 3px #272c30;
 }
-button:hover {
+button:active{
     box-shadow:none;
+    margin-top:2px;
+    margin-bottom:0px;
 }
 
 ol {
