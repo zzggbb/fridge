@@ -1,6 +1,4 @@
-http://hifiboombox.github.io/fridge
-
-##APCS Final Project
+## APCS Final Project
 * Zane Bradley
 * Guita Vahdatinia
 
